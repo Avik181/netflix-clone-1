@@ -35,17 +35,16 @@ useEffect(()=>{
 }, [dispatch])
   return (
     <div className="App">
-      <Router>
-      {!user? (<LoginScreen />) : (<Switch>
-          <Route path='/profile'>
-           <ProfileScreen />
-          </Route>
-          <Route exact path="/">
-            <HomeScreen />
-          </Route>
-        </Switch>)}
       
-    </Router>
+      {!user? (<LoginScreen />) : (
+          <>
+           <ProfileScreen />
+          <HomeScreen />
+          </>
+          
+        )}
+      
+    
     </div>
   );
 }
